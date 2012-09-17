@@ -2,7 +2,9 @@ This project contains two examples which demonstrate that, despite an apparently
 
 ```
 mvn clean install
-java -XX:+TraceClassUnloading -XX:PermSize=10M -XX:MaxPermSize=10M -cp target/com.github.johntrimble.examples.permgen-1.0.0-SNAPSHOT.jar com.github.johntrimble.examples.permgen.Example1
+java -XX:+TraceClassUnloading -XX:PermSize=10M -XX:MaxPermSize=10M \
+  -cp target/com.github.johntrimble.examples.permgen-1.0.0-SNAPSHOT.jar \
+  com.github.johntrimble.examples.permgen.Example1
 ```
 
 The `-XX:+TraceClassUnloading` option causes the HotSpot JVM to print out when a class is unloaded. The `-XX:PermSize=10M` and `-XX:MaxPermSize=10M` limit the size of the PermGen heap, so that the garbage collection behavior of the PermGen heap can be more readily shown.
@@ -11,5 +13,7 @@ The second example, `com.github.johntrimble.examples.permgen.Example2`, demonstr
 
 ```
 mvn clean install
-java -XX:+TraceClassUnloading -XX:PermSize=10M -XX:MaxPermSize=10M -cp target/com.github.johntrimble.examples.permgen-1.0.0-SNAPSHOT.jar com.github.johntrimble.examples.permgen.Example2
+java -XX:+TraceClassUnloading -XX:PermSize=10M -XX:MaxPermSize=10M \ 
+  -cp target/com.github.johntrimble.examples.permgen-1.0.0-SNAPSHOT.jar \
+  com.github.johntrimble.examples.permgen.Example2
 ```
